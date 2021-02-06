@@ -1,0 +1,28 @@
+<h3>Add App</h3>
+<form action="/apps" method="POST" class="col s12">
+    <div class="row">
+        <div class="input-field">
+            <input id="title" type="text" name="title">
+            <label for="title">Title</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <select id="status" name="status">
+                <option value="public" selected>Public</option>
+                <option value="private">Private</option>
+            </select>
+            <label>Status</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field">
+            <h5>Tell Us Your App:</h5>
+            <textarea id="body" name="body"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <input type="submit" class="btn" value="Save">
+        <a href="/dashboard" class="btn orange">Cancel</a>
+    </div>
+</form>

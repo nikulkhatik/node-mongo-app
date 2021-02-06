@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h3>{{app.title}}
+            <small>{{{editIcon app.user user app._id false}}}</small>
+        </h3>
+        <div class="card app">
+            <div class="card-content">
+                <span class="card-title">{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span>
+                {{{app.body}}}
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="card center-align">
+            <div class="card-content">
+                <span class="card-title">{{app.user.displayName}}</span>
+                <img src="{{app.user.image}}" class="circle responsive-img img-small">
+            </div>
+            <div class="card-action">
+                <a href="/apps/user/{{app.user._id}}">More From {{app.user.firstName}}</a>
+            </div>
+        </div>
+    </div>
+</div>
