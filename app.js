@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')(session)
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override')
+var flash = require('connect-flash')
 
 //Load Config
 dotenv.config({
@@ -56,13 +57,13 @@ app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     extname: '.hbs'
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', '.hbs')
 
 //Sessions
 app.use(session({
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
@@ -73,16 +74,23 @@ app.use(passport.session())
 //set global var
 app.use(function (req, res, next) {
     res.locals.user = req.user || null
+    res.locals.app_name = process.env.APP_NAME || null
     next()
 })
 
 //Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
 
+//Flash
+app.use(flash())
+
 //Routes
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/apps', require('./routes/apps'))
+
+var send = require('./config/nodemailer');
+send(['nikul.vnnovate@gmail.com'],'Test','mail1');
 
 const PORT = process.env.PORT || 5000
 

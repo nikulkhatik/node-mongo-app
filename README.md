@@ -1,2 +1,2 @@
 # node-mongo-app
-nodejs google oauth20
+nodejs express mongoose handlebars passport method-override morgan moment google oauth20

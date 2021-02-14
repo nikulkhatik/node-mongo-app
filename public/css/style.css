@@ -20,3 +20,14 @@ p{
 .img-small{
     width: 180px;
 }
+
+.lead{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.userName {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}

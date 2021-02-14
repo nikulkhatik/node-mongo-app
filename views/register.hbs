@@ -1,0 +1,62 @@
+<h3><i class="fab fa-node-js"></i> {{app_name}}</h3>
+
+<div class="section">
+    <p class="lead">
+        Register
+    </p>
+</div>
+<form action="/auth/register" method="POST" class="col s12" enctype="multipart/form-data">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="first_name" name="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="last_name" name="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="email" type="email" name="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="password" type="password" name="password" class="validate">
+            <label for="password">Password</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="confirm_password" type="password" name="confirm_password" class="validate">
+            <label for="confirm_password">Confirm Password</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input type="file" name="image">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Upload image">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn" style="width: 100%;">Submit</button>
+    </div>
+    <div class="row">
+        <a href="/" class="waves-effect waves-teal btn-flat btn-small pulse">Login</a>
+    </div>
+</form>
+<div class="divider"></div>
+<div class="section">
+    <a href="/auth/google" class="btn red darken-1">
+        <i class="fab fa-google left"></i> Login with Google
+    </a>
+</div>
